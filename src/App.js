@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <Navbar></Navbar>
       <div className='content'>
-        <h1>App Component</h1>
+     
    <Home></Home>
 
       </div>

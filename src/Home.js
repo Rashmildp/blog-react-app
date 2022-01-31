@@ -3,20 +3,26 @@ import { useState } from "react";
 const Home=()=>{
     const [name, setName]=useState('Rashmi');
    const [age,setAge]=useState(25);
+   const [blogs,setblogs]=useState([
+       {title:'Hello world', body: 'Helll sxxvvf dfdts', author:'Rashmi', id:1},
+       {title:'Welcome to the RecatJs', body: 'React is very popular frontend library', author:'Rashmi', id:2},
+       {title:'Welcome to the .NET', body: 'New version is .NET6', author:'Rashmi', id:3},
+   ])
     const handleClick=()=>{
-       setName('Duleesha');
-       setAge(30);
-        console.log(name);
+      
     }
-    const handleClickAgain=(name)=>{
-        console.log("Hello "+name)
-    }
+   
     return(
-        <div className="hopme">
-            <h2>Home Page</h2>
-            <p>{name} age {age} years old</p>
-            <button onClick={handleClick}>Click Me!</button>
+        <div className="home">
+        {blogs.map((blog)=>(
+            <div className="blog-preview" key={blog.id}>
+                <h2>{blog.title}</h2>
+                <p>Written by {blog.author}</p>
+                </div>
+
+        ))}
          
+           
         </div>
 
     );
